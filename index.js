@@ -20,18 +20,18 @@ module.exports = async function getZonetab(...args) {
 
   const [options] = args;
 
-  const response = await fettuccine('time-zones/repository/tzdata-latest.tar.gz', Object.assign({
-    baseUrl: 'https://www.iana.org/'
-  }, options, {
+  const response = await fettuccine('time-zones/repository/tzdata-latest.tar.gz', {
+    baseUrl: 'https://www.iana.org/',
+    ...options,
     encoding: null
-  }));
+  });
 
   if (response.statusCode < 200 || 299 < response.statusCode) {
     throw new Error(`${response.statusCode} ${response.statusMessage}`);
   }
 
   const data = (await decompressTargz()(response.body)).find(isZoneTab).data;
-  const encoding = Object.assign({encoding: 'utf8'}, options).encoding;
+  const encoding = ({encoding: 'utf8', ...options}).encoding;
 
   if (encoding !== null) {
     return data.toString(encoding);
