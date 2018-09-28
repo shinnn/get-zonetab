@@ -6,8 +6,8 @@
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
   "scripts": {
     "pretest": "eslint --fix --config @shinnn/node index.js test.js",
-    "test": "node --strong_mode --throw-deprecation --track-heap-objects test.js | tap-spec",
-    "coverage": "node --strong_mode node_modules/.bin/istanbul cover test.js"
+    "test": "node test.js | tap-spec",
+    "coverage": "istanbul cover test.js"
   },
   "license": "MIT",
   "files": [
@@ -39,7 +39,7 @@
     "identifiers"
   ],
   "dependencies": {
-    "decompress-targz": "^4.0.0",
+    "decompress-targz": "^4.1.0",
     "fettuccine": "^1.0.2"
   },
   "devDependencies": {

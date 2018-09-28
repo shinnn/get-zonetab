@@ -4,7 +4,7 @@ const getZonetab = require('.');
 const test = require('tape');
 
 test('getZonetab()', t => {
-  t.plan(5);
+  t.plan(6);
 
   t.strictEqual(getZonetab.name, 'getZonetab', 'should have a function name.');
 
@@ -35,6 +35,14 @@ test('getZonetab()', t => {
       err.message,
       '404 Not Found',
       'should fail when it cannot get zone.tab file.'
+    );
+  }).catch(t.fail);
+
+  getZonetab({}, {}).then(t.fail, err => {
+    t.strictEqual(
+      err.toString(),
+      'RangeError: Expected 0 or 1 argument (<Object>), but got 2 arguments.',
+      'should fail when it takes too many arguments.'
     );
   }).catch(t.fail);
 });

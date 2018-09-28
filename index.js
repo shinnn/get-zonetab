@@ -19,7 +19,15 @@ function isZoneTab(file) {
   return file.path === 'zone.tab';
 }
 
-module.exports = function getZonetab(options) {
+module.exports = function getZonetab(...args) {
+  const argLen = args.length;
+
+  if (argLen > 1) {
+    return Promise.reject(new RangeError(`Expected 0 or 1 argument (<Object>), but got ${argLen} arguments.`));
+  }
+
+  const options = args[0];
+
   return fettuccine('time-zones/repository/tzdata-latest.tar.gz', Object.assign({
     baseUrl: 'https://www.iana.org/'
   }, options, {
@@ -28,10 +36,10 @@ module.exports = function getZonetab(options) {
   .then(decompressResponseBody)
   .then(function extractZoneTabData(files) {
     const data = files.find(isZoneTab).data;
-    options = Object.assign({encoding: 'utf8'}, options);
+    const encoding = Object.assign({encoding: 'utf8'}, options).encoding;
 
-    if (options.encoding !== null) {
-      return data.toString(options.encoding);
+    if (encoding !== null) {
+      return data.toString(encoding);
     }
 
     return data;
