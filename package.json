@@ -1,6 +1,6 @@
 {
   "name": "get-zonetab",
-  "version": "2.0.0-1",
+  "version": "2.0.0-2",
   "description": "Get the latest zone.tab file form IANA time zone database",
   "repository": "shinnn/get-zonetab",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
