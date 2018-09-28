@@ -1,12 +1,10 @@
 # get-zonetab
 
-[![NPM version](https://img.shields.io/npm/v/get-zonetab.svg)](https://www.npmjs.com/package/get-zonetab)
+[![npm version](https://img.shields.io/npm/v/get-zonetab.svg)](https://www.npmjs.com/package/get-zonetab)
 [![Build Status](https://travis-ci.org/shinnn/get-zonetab.svg?branch=master)](https://travis-ci.org/shinnn/get-zonetab)
-[![Coverage Status](https://img.shields.io/coveralls/shinnn/get-zonetab.svg)](https://coveralls.io/github/shinnn/is-gist-starred?branch=master)
-[![Dependency Status](https://david-dm.org/shinnn/get-zonetab.svg)](https://david-dm.org/shinnn/get-zonetab)
-[![devDependency Status](https://david-dm.org/shinnn/get-zonetab/dev-status.svg)](https://david-dm.org/shinnn/get-zonetab#info=devDependencies)
+[![Coverage Status](https://img.shields.io/coveralls/shinnn/get-zonetab.svg)](https://coveralls.io/github/shinnn/get-zonetab?branch=master)
 
-A [Node](https://nodejs.org/) module to get the latest [`zone.tab`](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) file form [IANA Time Zone Database](https://www.iana.org/time-zones)
+A [Node.js](https://nodejs.org/) module to get the latest [`zone.tab`](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) file form [IANA Time Zone Database](https://www.iana.org/time-zones)
 
 ```javascript
 const getZonetab = require('get-zonetab');
@@ -56,6 +54,6 @@ getZonetab({encoding: null}).then(buffer => {
 
 ## License
 
-Copyright (c) 2016 [Shinnosuke Watanabe](https://github.com/shinnn)
+Copyright (c) 2016 - 2018 [Shinnosuke Watanabe](https://github.com/shinnn)
 
 Licensed under [the MIT License](./LICENSE).

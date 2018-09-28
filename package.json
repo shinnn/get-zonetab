@@ -1,52 +1,59 @@
 {
-  "name": "get-zonetab",
-  "version": "2.0.0-2",
-  "description": "Get the latest zone.tab file form IANA time zone database",
-  "repository": "shinnn/get-zonetab",
-  "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
-  "scripts": {
-    "pretest": "eslint --fix --config @shinnn/node index.js test.js",
-    "test": "node test.js | tap-spec",
-    "coverage": "istanbul cover test.js"
-  },
-  "license": "MIT",
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "request",
-    "get",
-    "fetch",
-    "extract",
-    "latest",
-    "tz",
-    "time",
-    "zone",
-    "zones",
-    "timezone",
-    "timezones",
-    "list",
-    "data",
-    "database",
-    "iana",
-    "code",
-    "country",
-    "country-code",
-    "coordinate",
-    "coordinates",
-    "id",
-    "identifier",
-    "identifiers"
-  ],
-  "dependencies": {
-    "decompress-targz": "^4.1.0",
-    "fettuccine": "^1.0.2"
-  },
-  "devDependencies": {
-    "@shinnn/eslint-config-node": "^3.0.0",
-    "eslint": "^3.2.2",
-    "istanbul": "^0.4.4",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.6.0"
-  }
+	"name": "get-zonetab",
+	"version": "2.0.0-2",
+	"description": "Get the latest zone.tab file form IANA time zone database",
+	"repository": "shinnn/get-zonetab",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"license": "MIT",
+	"scripts": {
+		"pretest": "eslint .",
+		"test": "nyc node test.js"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"request",
+		"get",
+		"fetch",
+		"extract",
+		"latest",
+		"tz",
+		"time",
+		"zone",
+		"zones",
+		"timezone",
+		"timezones",
+		"list",
+		"data",
+		"database",
+		"iana",
+		"code",
+		"country",
+		"country-code",
+		"coordinate",
+		"coordinates",
+		"id",
+		"identifier",
+		"identifiers",
+		"csv",
+		"tsv"
+	],
+	"dependencies": {
+		"decompress-targz": "^4.1.1",
+		"fettuccine": "^1.0.4"
+	},
+	"devDependencies": {
+		"@shinnn/eslint-config": "^6.7.1",
+		"eslint": "^5.6.0",
+		"nyc": "^13.0.1",
+		"nyc-config-common": "^1.0.0",
+		"tape": "^4.9.1"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn"
+	},
+	"nyc": {
+		"extends": "nyc-config-common"
+	}
 }
